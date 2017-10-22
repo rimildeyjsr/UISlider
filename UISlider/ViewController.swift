@@ -10,16 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - view did load
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        helloLabel.textColor = UIColor(hue: 0
+, saturation: 0, brightness: 0, alpha: CGFloat(slider.value))
     }
+    
+    // MARK: - outlets
+    
+    @IBOutlet weak var helloLabel: UILabel!
+    
+    @IBOutlet weak var slider: UISlider!
+    
+    // MARK: - interactions
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func dragSlider(_ sender: UISlider) {
+        helloLabel.textColor = UIColor(hue: 0
+            , saturation: 0, brightness: 0, alpha: CGFloat(sender.value))
     }
-
-
 }
+
 
